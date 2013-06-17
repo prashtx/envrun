@@ -2,7 +2,10 @@
   "name": "envrun",
   "version": "0.0.1",
   "description": "Run commands using specified environment variables",
-  "main": "bin/envrun",
+  "main": "index.js",
+  "bin": {
+    "envrun" : "./index.js"
+  },
   "repository": "",
   "author": "",
   "license": "BSD",
