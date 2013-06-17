@@ -6,8 +6,8 @@
   "bin": {
     "envrun" : "./index.js"
   },
-  "repository": "",
-  "author": "",
+  "repository": "https://github.com/prashtx/envrun.git",
+  "author": "Prashant Singh",
   "license": "BSD",
   "dependencies": {
     "optimist": "~0.5.2"
