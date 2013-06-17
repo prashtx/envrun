@@ -1,0 +1,12 @@
+{
+  "name": "envrun",
+  "version": "0.0.1",
+  "description": "Run commands using specified environment variables",
+  "main": "bin/envrun",
+  "repository": "",
+  "author": "",
+  "license": "BSD",
+  "dependencies": {
+    "optimist": "~0.5.2"
+  }
+}
