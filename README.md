@@ -35,6 +35,10 @@ You can of course specify a different environment file with `-e`:
 A value provided by `-p` takes precedence over a `PORT` value from the
 environment file, which takes precendence over the default value of `3000`.
 
+If you want to include the calling environment's `PATH`, then use the `--path` flag:
+
+    $ envrun --path mocha
+
 You can confirm what's going on with your OS's `env` command:
 
     $ envrun env
