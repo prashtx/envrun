@@ -9,10 +9,12 @@ var path = require('path');
 
 var argv = optimist
 .default('e', '.env')
+.boolean('path')
 .demand(1)
 .usage('Run a command with a specified environment.\nUsage: $0')
 .describe('e', 'Specify an environment file.')
 .describe('p', 'Specify a value for the PORT environment variable. Defaults to 3000 or whatever is specified in the .env file.')
+.describe('path', 'Include the PATH variable from the calling environment.')
 .argv;
 
 function resolve(cmd) {
@@ -27,7 +29,7 @@ function resolve(cmd) {
   }
 }
 
-function getEnv(filename, port) {
+function getEnv(filename, port, path) {
   if (!fs.existsSync(filename)) {
     console.log('Could not find environment file: ' + filename);
     process.exit(1);
@@ -76,12 +78,16 @@ function getEnv(filename, port) {
     env.PORT = 3000;
   }
 
+  if (path) {
+    env.PATH = process.env.PATH;
+  }
+
   return env;
 }
 
 var cmd = argv._[0];
 var args = argv._.slice(1);
-var env = getEnv(argv.e, argv.p);
+var env = getEnv(argv.e, argv.p, argv.path);
 cmd = resolve(cmd);
 spawn(cmd, args, {
   stdio: 'inherit',
