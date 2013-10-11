@@ -1,6 +1,6 @@
 {
   "name": "envrun",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Run commands using specified environment variables",
   "main": "index.js",
   "bin": {
